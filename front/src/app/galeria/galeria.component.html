@@ -1,0 +1,76 @@
+<div>
+  <h1 class="titulo subrayado text-center mb-5">Galería</h1>
+
+  <div class="">
+    <ng-container *ngIf="this.galeria_imagenes.length > 0; else ningunMensaje">
+      <div class="contenedor-imagenes text-center mb-5">
+        <div (click)="fotoSeleccionada($event)"
+        *ngFor="let imagen of this.galeria_imagenes | paginate: { itemsPerPage: 6, currentPage: p } ">
+          <label class="custom-control-label" for="{{imagen.id}}"></label>
+          <img src="../../assets/imagenes/galeria/{{imagen.nombre}}">
+          <input type="checkbox" class="custom-control custom-checkbox image-checkbox custom-control-input checkbox-inline" id="{{imagen.id}}" alt="{{imagen.nombre}}">
+        </div>
+      </div>
+
+      <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente" class="text-center">
+      </pagination-controls>
+    </ng-container>
+
+    <ng-template #ningunMensaje>
+      <p class="text-center mb-5">No hay ninguna imagen disponible</p>
+    </ng-template>
+    <!-- <div class="col-md-4 col-sm-6 col-12 p-3 custom-control custom-checkbox image-checkbox text-center">
+      <label class="custom-control-label" for="1">
+        <img class="img-fluid w-50 border border-3 border-dark rounded-3" src="../../assets/imagenes/apto_sangre/viaje.png">
+      </label>
+      <input type="checkbox" class="custom-control-input checkbox-inline" id="1">
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 p-3 custom-control custom-checkbox image-checkbox text-center">
+      <label class="custom-control-label" for="2">
+        <img class="img-fluid w-50 border border-3 border-dark rounded-3" src="../../assets/imagenes/apto_sangre/donar.png">
+      </label>
+      <input type="checkbox" class="custom-control-input checkbox-inline" id="2">
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 p-3 custom-control custom-checkbox image-checkbox text-center">
+      <label class="custom-control-label" for="3">
+        <img class="img-fluid w-50 border border-3 border-dark rounded-3" src="../../assets/imagenes/apto_sangre/edad.png">
+      </label>
+      <input type="checkbox" class="custom-control-input checkbox-inline" id="3">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12 p-3 custom-control custom-checkbox image-checkbox text-center">
+      <label class="custom-control-label" for="4">
+        <img class="img-fluid w-50 border border-3 border-dark rounded-3" src="../../assets/imagenes/apto_sangre/embarazo.png">
+      </label>
+      <input type="checkbox" class="custom-control-input checkbox-inline" id="4">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12 p-3 custom-control custom-checkbox image-checkbox text-center">
+      <label class="custom-control-label" for="5">
+        <img class="img-fluid w-50 border border-3 border-dark rounded-3" src="../../assets/imagenes/apto_sangre/enfermedad.png">
+      </label>
+      <input type="checkbox" class="custom-control-input checkbox-inline" id="5">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12 p-3 custom-control custom-checkbox image-checkbox text-center">
+      <label class="custom-control-label" for="6">
+        <img class="img-fluid w-50 border border-3 border-dark rounded-3" src="../../assets/imagenes/apto_sangre/peso.png">
+      </label>
+      <input type="checkbox" class="custom-control-input checkbox-inline" id="6">
+    </div> -->
+
+  </div>
+  <div *ngIf="puedeModificar" class="row d-flex justify-content-evenly mb-5 mt-5">
+    <div class="col-md-6 col-12 text-center">
+      <button #boton_Eliminar class="btn-secundario w-50 mb-2" (click)="eliminandoFotos()">Eliminar fotos</button>
+    </div>
+
+    <div class="col-md-6 col-12 text-center">
+      <button #boton_Añadir class="btn-secundario w-50 mb-2" data-bs-toggle="modal"
+      data-bs-target="#modalSubirFoto">Subir foto</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<app-add-imagen (recargarImagenes)="mostrarImagenes()"></app-add-imagen>

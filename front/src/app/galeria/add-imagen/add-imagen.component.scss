@@ -1,0 +1,38 @@
+
+// .efecto{
+//   button{
+//     position: relative;
+//     overflow: hidden;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border: none;
+//     cursor: pointer;
+//     span{
+//       z-index: 10;
+//     }
+//     &:hover:after{
+//       position: absolute;
+//       content: '';
+//       background-color: red;
+//       height: 400px;
+//       width: 400px;
+//       top:-12px;
+//       left: -13px;
+//     }
+
+//     &:after{
+//       position: absolute;
+//       content: '';
+//       border-radius: 30% 70% 70% 30% / 30% 22% 78% 70%;
+//       background-color: red;
+//       height: 70px;
+//       width: 80px;
+//       top:-12px;
+//       left: -13px;
+//       transition: all 1s;
+//     }
+//   }
+
+
+// }

@@ -1,0 +1,30 @@
+.container {
+  margin: 0;
+  max-width: 100%;
+
+  &>:first-child {
+    padding-top: 5rem;
+  }
+}
+
+input {
+  background-color: var(--color-primario);
+  color: var(--bs-white);
+  padding: .4rem 1rem;
+
+  &:hover {
+    background-color: var(--color-secundario);
+  }
+}
+
+.mapa {
+  width: 100%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+}
+
+div.alert {
+  z-index: 9000;
+  width: 25rem;
+}

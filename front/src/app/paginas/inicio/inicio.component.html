@@ -1,0 +1,60 @@
+<div *ngIf="this.citaPedida == 0"
+  class="alert alert-success alert-dismissible position-fixed fade show ms-3"
+    role="alert">
+  Tu cita ha sido registrada correctamente. Te hemos mandado un correo de confirmación.
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div *ngIf="this.citaPedida == 1"
+  class="alert alert-danger alert-dismissible position-fixed fade show ms-3"
+  role="alert">
+  Se ha producido un error al pedir tu cita. Por favor, prueba de nuevo más tarde.
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="text-center home">
+  <div class="container">
+    <div class="row lh-lg f-contraste">
+      <div class="horario col-12 col-sm-6">
+        <i class="fa-solid fa-clock"></i>
+        <h1 class="titulo subrayado">Nuestro horario</h1>
+        <p>Lunes a Viernes</p>
+        <p>de 9:15 a 13:30</p>
+      </div>
+
+      <app-inicio-tfns class="col-12 col-sm-6 mt-5 mt-sm-0"></app-inicio-tfns>
+    </div>
+  </div>
+
+  <svg _ngcontent-ncw-c20="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+    <path _ngcontent-ncw-c20="" fill="#f1eef5" fill-opacity="1"
+      d="M0,50L380,150L960,80L1950,128L1440,0L960,0L480,0L0,0Z">
+    </path>
+  </svg>
+
+  <div class="lh-lg">
+    <i class="fa-solid fa-map-location"></i>
+
+    <h1 class="titulo subrayado">Dónde donar</h1>
+
+    <div *ngFor="let d of direcciones">
+      <p class="fw-bold">{{ d.lugar }}</p>
+
+      <p>Calle {{ d.calle }}, {{ d.numero }}</p>
+
+      <p>{{ d.ciudad }}, {{ d.cp }}</p>
+
+      <p>{{ d.provincia }}</p>
+    </div>
+
+    <div class="clearfix mt-3 mb-5">
+      <iframe class="mapa mt-2 float-end" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.5121881259743!2d-4.1130816848705125!3d38.70604816580596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6b8cfe481ce835%3A0x9e6aa2834a5e7143!2sHermandad%20de%20Donantes%20de%20Sangre!5e0!3m2!1ses!2ses!4v1674681982925!5m2!1ses!2ses">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<app-newsletter-ventana></app-newsletter-ventana>
