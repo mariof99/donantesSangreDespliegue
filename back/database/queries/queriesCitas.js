@@ -56,11 +56,14 @@ const getNumCitasPendientesUser = async(id) => {
 
 
 const getCitasFechaHora = async(fecha) => {
+    const args = [];
+    args.push(fecha);
+
     try {
         
         const citas = await conexion.query('SELECT citas.fecha FROM citas '
             + 'JOIN users ON citas.userId = users.id '
-            + 'WHERE DATE(citas.fecha) = ?;', fecha
+            + 'WHERE DATE(citas.fecha) = $1;', args
         );
 
         citas.forEach(cita => {

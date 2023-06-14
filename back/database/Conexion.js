@@ -50,19 +50,3 @@ class Conexion {
 const conexion = new Conexion();
 
 module.exports = conexion;
-
-
-pool.query('INSERT INTO your_table (column1, column2) VALUES ($1, $2)', columnValues, (err, result) => {
-    if (err) {
-      console.error('Error executing query', err);
-      return;
-    }
-  
-    // Process the query result
-    console.log('Rows inserted:', result.rowCount);
-  
-    // Release the client back to the pool
-    pool.release();
-  
-    // Do other tasks or close the pool when you're done
-  });
