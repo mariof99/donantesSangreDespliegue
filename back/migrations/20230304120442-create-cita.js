@@ -23,12 +23,12 @@ module.exports = {
         allowNull: false
       },
       cancelada: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.SMALLINT,
         allowNull: false,
         defaultValue: false
       },
       haDonado: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.SMALLINT,
         allowNull: false,
         defaultValue: false
       },
