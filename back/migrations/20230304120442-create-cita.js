@@ -23,12 +23,12 @@ module.exports = {
         allowNull: false
       },
       cancelada: {
-        type: Sequelize.SMALLINT,
+        type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false
       },
       haDonado: {
-        type: Sequelize.SMALLINT,
+        type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false
       },
