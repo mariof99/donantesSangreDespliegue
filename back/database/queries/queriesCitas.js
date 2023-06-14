@@ -89,57 +89,6 @@ const getHorarioCitas = async() => {
     return diasHoras;
 }
 
-// const getHorarioCitas = async(dia) => {
-
-//     const fecha = new Date(dia);
-//     let codDia = '';
-
-//     switch (fecha.getDay()) {
-//         case 1:
-            
-//             codDia = 'l';
-//             break;
-    
-//         case 2:
-            
-//             codDia = 'm';
-//             break;
-        
-//         case 3:
-            
-//             codDia = 'x';
-//             break;
-
-//         case 4:
-            
-//             codDia = 'j';
-//             break;
-
-//         case 5:
-            
-//             codDia = 'v';
-//             break;
-
-//         case 6:
-            
-//             codDia = 's';
-//             break;
-//     }
-
-//     const horas = await conexion.query('SELECT diasHoras.hora FROM diasHoras '
-//         + 'JOIN horarios ON horarios.codDia = diasHoras.codDia '
-//         + 'WHERE horarios.codDia LIKE ' + "'" + codDia + "'");
-    
-//     let arrayHoras = [];
-//     horas.forEach(hora => {
-//         arrayHoras.push(hora.hora);
-
-//     });
-
-//     return arrayHoras;
-// }
-
-
 const getCitaPendienteUser = async(id) => {
     const citasUser = await models.Cita.findAll({
         attributes: ['id', 'fecha', 'donacion', 'cancelada'],

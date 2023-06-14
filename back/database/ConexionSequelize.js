@@ -1,5 +1,4 @@
 require('dotenv').config();
-const mysql = require('mysql2');
 const {Sequelize} = require('sequelize'); 
 
 //Todo Mario
@@ -8,7 +7,7 @@ class CnxnSequelize {
     constructor() {
         this.db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
             host: process.env.DB_HOST,
-            dialect: 'mysql',
+            dialect: 'postgres',
             pool: {
                 max: 10,
                 min: 0,
